@@ -1,15 +1,8 @@
 import { useState } from "react";
-import { Heart, Search, ShoppingBag, UserRound, Menu, X } from "lucide-react";
-import { Input } from "../ui/input";
+import { Heart, ShoppingBag, UserRound, Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-
-  const handleSearchSubmit = () => {
-    // Handle search submission here
-    setIsSearchOpen(false);
-  };
 
   return (
     <div className="relative">

@@ -1,17 +1,13 @@
-import React from "react";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
 
-type Props = {};
-
-export const SizeChartHoddies = (props: Props) => {
+export const SizeChartHoddies = () => {
   return (
     <div className="">
       <h1 className="text-center mb-4">HOODIES</h1>
@@ -58,7 +54,7 @@ export const SizeChartHoddies = (props: Props) => {
     </div>
   );
 };
-const SizeChartShirt = (props: Props) => {
+const SizeChartShirt = () => {
   return (
     <div className="mt-4">
       <h1 className="text-center mb-4">TSHIRT</h1>
@@ -107,7 +103,7 @@ const SizeChartShirt = (props: Props) => {
 };
 export default SizeChartShirt;
 
-export const SizeChartShort = (props: Props) => {
+export const SizeChartShort = () => {
   return (
     <div className="mt-4">
       <h1 className="text-center mb-4">SHORTs</h1>

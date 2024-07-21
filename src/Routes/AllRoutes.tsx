@@ -2,7 +2,7 @@ type Props = {};
 import Cart from "@/Pages/Cart";
 import Home from "@/Pages/Home";
 import { Route, Routes } from "react-router-dom";
-const AllRoutes = (props: Props) => {
+const AllRoutes = () => {
   return (
     <>
       <Routes>

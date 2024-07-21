@@ -1,9 +1,6 @@
 import { Star } from "lucide-react";
-import React from "react";
 
-type Props = {};
-
-const Testimonials = (props: Props) => {
+const Testimonials = () => {
   return (
     <div className="space-y-10">
       <div data-aos="fade-up">

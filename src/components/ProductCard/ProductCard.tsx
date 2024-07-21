@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-type Props = {};
-
-export const ProductCard = (props: Props) => {
+export const ProductCard = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {

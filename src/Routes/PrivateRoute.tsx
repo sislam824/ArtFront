@@ -1,6 +1,4 @@
-type Props = {};
-
-const PrivateRoute = (props: Props) => {
+const PrivateRoute = () => {
   return <div>PrivateRoute</div>;
 };
 

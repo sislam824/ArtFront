@@ -1,8 +1,6 @@
 import { Award, Check, CreditCard, Truck } from "lucide-react";
 
-type Props = {};
-
-export const Shopify = (props: Props) => {
+export const Shopify = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
       <div className="flex flex-col justify-center items-center gap-2">
