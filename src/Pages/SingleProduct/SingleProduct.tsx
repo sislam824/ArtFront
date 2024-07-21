@@ -168,17 +168,16 @@ const SingleProduct = () => {
           </div>
         </div>
       </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+      </div>
       <div>
         <Testimonials />
       </div>
       <div>
         <Shopify />
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
       </div>
     </div>
   );
