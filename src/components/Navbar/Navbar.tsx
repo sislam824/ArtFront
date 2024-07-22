@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Heart, ShoppingBag, UserRound, Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,21 +38,23 @@ const Navbar = () => {
             <span>Contact</span>
           </div>
         </div>
-        <img
-          src="https://imgs.search.brave.com/YY7BrnPLBvHnswhfn4G1Q285g4MuljBAIGnscKeZ9NE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vbXViYXNz/aGlyZ3JhcGhpY3Mu/Y29tLm5nL3dwLWNv/bnRlbnQvdXBsb2Fk/cy8yMDIzLzEwL0RD/VS1Xb25kZXItV29t/YW4tQ2luZW1hdGlj/LUxvZ28tVmFyaWFu/dC0yMDE2LnBuZz9y/ZXNpemU9NjAwLDQy/MyZzc2w9MQ"
-          alt="Logo"
-          className="w-[60px]"
-        />
+        <Link to="/">
+          <img
+            src="https://imgs.search.brave.com/YY7BrnPLBvHnswhfn4G1Q285g4MuljBAIGnscKeZ9NE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vbXViYXNz/aGlyZ3JhcGhpY3Mu/Y29tLm5nL3dwLWNv/bnRlbnQvdXBsb2Fk/cy8yMDIzLzEwL0RD/VS1Xb25kZXItV29t/YW4tQ2luZW1hdGlj/LUxvZ28tVmFyaWFu/dC0yMDE2LnBuZz9y/ZXNpemU9NjAwLDQy/MyZzc2w9MQ"
+            alt="Logo"
+            className="w-[60px]"
+          />
+        </Link>
         <ul className="hidden md:flex items-center gap-4">
-          <li>
+          <Link to="/login">
             <UserRound />
-          </li>
+          </Link>
           <li>
             <Heart />
           </li>
-          <li>
+          <Link to="/cart">
             <ShoppingBag />
-          </li>
+          </Link>
         </ul>
       </div>
 
