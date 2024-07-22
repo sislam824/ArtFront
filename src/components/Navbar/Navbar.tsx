@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const handleMenuClick = () => {
+    setIsMenuOpen(false);
+  };
   return (
     <div className="relative">
       <div className="p-2 flex items-center justify-between">
@@ -82,10 +84,48 @@ const Navbar = () => {
                 />
               </div>
               <div className="mt-8 space-y-4">
-                <span className="block py-2 border-b">Home</span>
-                <span className="block py-2 border-b">Hoodies</span>
-                <span className="block py-2 border-b">About</span>
-                <span className="block py-2 border-b">Contact</span>
+                <Link to="/" onClick={handleMenuClick}>
+                  <span className="block py-2 border-b">Home</span>
+                </Link>
+                <Link to="/" onClick={handleMenuClick}>
+                  <span className="block py-2 border-b">Hoodies</span>
+                </Link>
+                <Link to="/" onClick={handleMenuClick}>
+                  <span className="block py-2 border-b">About</span>
+                </Link>
+                <Link to="/" onClick={handleMenuClick}>
+                  <span className="block py-2 border-b">Contact</span>
+                </Link>
+                <Link
+                  to="/login"
+                  className="block py-2 border-b"
+                  onClick={handleMenuClick}
+                >
+                  <div className="flex items-center">
+                    <UserRound className="mr-2" />
+                    User
+                  </div>
+                </Link>
+                <Link
+                  to="/"
+                  className="block py-2 border-b"
+                  onClick={handleMenuClick}
+                >
+                  <div className="flex items-center">
+                    <Heart className="mr-2" />
+                    Favorites
+                  </div>
+                </Link>
+                <Link
+                  to="/cart"
+                  className="block py-2 border-b"
+                  onClick={handleMenuClick}
+                >
+                  <div className="flex items-center">
+                    <ShoppingBag className="mr-2" />
+                    Cart
+                  </div>
+                </Link>
               </div>
             </div>
           </div>

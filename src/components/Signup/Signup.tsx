@@ -27,7 +27,10 @@ function Signup() {
             CREATE NEW CUSTOMER ACCOUNT
           </h3>
         </div>
-        <div className="border border-gray-300 rounded p-4 lg:w-[50%] m-auto">
+        <div
+          data-aos="zoom-in"
+          className="border border-gray-300 rounded p-4 lg:w-[50%] m-auto"
+        >
           <div className="border-b border-gray-200 pb-4">
             <h3 className="font-medium">PERSONAL INFORMATION</h3>
           </div>

@@ -14,7 +14,7 @@ function Cart() {
       <div className="heading bg-gray-200 p-2">
         <h3>SHOPPING CART</h3>
       </div>
-      <div className="cart-section mt-10">
+      <div data-aos="zoom-in" className="cart-section mt-10">
         <div className="pro-details shadow-md grid grid-cols-1 lg:grid-col-2 lg:justify-between  gap-4 md:grid-cols-2  items-center p-2 border border-gray-300">
           <div className="content flex flex-col lg:flex-row gap:5 items-center justify-between gap-4">
             <div className="pro-img">
@@ -94,7 +94,10 @@ function Cart() {
             </div>
             <div className="proceed mt-5">
               <a href="/checkout">
-                <Button className="py-8 px-4  text-white rounded-md w-full">
+                <Button
+                  data-aos="fade-up"
+                  className="py-8 px-4  text-white rounded-md w-full"
+                >
                   Proceed to Checkout
                 </Button>
               </a>
