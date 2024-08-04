@@ -10,7 +10,7 @@ const Home = () => {
             'url("https://thumbs.dreamstime.com/b/gothic-sexy-young-woman-halloween-beautiful-model-girl-fantasy-makeup-goth-costume-black-feathers-portrait-wide-screen-147399638.jpg?w=1400")',
         }}
       ></div>
-      <div className="grid grid-cols-1 lg:grid-cols-3 mt-10 w-[80%] m-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-3 w-[80%] mx-auto my-10 gap-4">
         <ProductCard
           img1={
             "https://images.pexels.com/photos/610293/pexels-photo-610293.jpeg?auto=compress&cs=tinysrgb&w=600"
