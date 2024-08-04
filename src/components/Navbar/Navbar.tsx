@@ -1,17 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Heart, UserRound, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import CartMenu from "../CartMenu/CartMenu";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const handleMenuClick = () => {
     setIsMenuOpen(false);
   };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
-      <div className="relative">
+      <div className="fixed w-full top-0  bg-transparent z-50 lg:backdrop-blur-sm shadow-lg">
         <div className="p-2 flex items-center justify-between">
           <Menu
             className="block md:hidden cursor-pointer"
@@ -36,10 +51,19 @@ const Navbar = () => {
          
         </div> */}
           <div className="hidden md:flex p-2">
-            <div className="flex items-center justify-center flex-grow space-x-4">
-              <Link to={"/"}>Home</Link>
-              <Link to={"/product"}>Product</Link>
-              <Link to={"/"}>About</Link>
+            <div className="flex items-center justify-center flex-grow space-x-4 font-bold">
+              <Link className={isScrolled ? "text-red-500" : ""} to={"/"}>
+                Home
+              </Link>
+              <Link
+                className={isScrolled ? "text-red-500" : ""}
+                to={"/product"}
+              >
+                Product
+              </Link>
+              <Link className={isScrolled ? "text-red-500" : ""} to={"/"}>
+                About
+              </Link>
             </div>
           </div>
           <Link to="/">
@@ -51,12 +75,14 @@ const Navbar = () => {
           </Link>
           <ul className="hidden md:flex items-center gap-4">
             <Link to="/login">
-              <UserRound />
+              <UserRound
+                className={isScrolled ? "text-red-500" : "text-black"}
+              />
             </Link>
             <li>
-              <Heart />
+              <Heart className={isScrolled ? "text-red-500" : "text-black"} />
             </li>
-            <CartMenu setIsMenuOpen={setIsMenuOpen} />
+            <CartMenu setIsMenuOpen={setIsMenuOpen} isScrolled={isScrolled} />
           </ul>
         </div>
 

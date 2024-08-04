@@ -12,7 +12,9 @@ function App() {
   }, []);
   return (
     <>
-      <Navbar />
+      <div className="mb-16">
+        <Navbar />
+      </div>
       {/* 
       <Footer /> */}
       {/* <SingleProduct /> */}

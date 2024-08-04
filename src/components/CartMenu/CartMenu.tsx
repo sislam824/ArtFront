@@ -8,14 +8,14 @@ import {
 } from "@/components/ui/sheet";
 import { ShoppingBag } from "lucide-react";
 import { Link } from "react-router-dom";
-const CartMenu = ({ setIsMenuOpen }: any) => {
+const CartMenu = ({ setIsMenuOpen, isScrolled }: any) => {
   const close = () => {
     setIsMenuOpen(false);
   };
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <ShoppingBag className="mr-2" />
+        <ShoppingBag className={isScrolled ? "text-red-500" : "text-black"} />
       </SheetTrigger>
       <SheetContent data-aos="zoom-in" className="cart-section ">
         <div className="mt-10 shadow-md grid grid-cols-1 lg:grid-col-2 lg:justify-between  gap-4 md:grid-cols-2  items-center p-2 border border-gray-300">
