@@ -22,14 +22,15 @@ import SizeChartHoddies, {
 } from "@/components/SizeChart/SizeChart";
 import SizeChartShirt from "@/components/SizeChart/SizeChart";
 import { ProductCard } from "@/components/ProductCard/ProductCard";
+import { Link } from "react-router-dom";
 
 const SingleProduct = () => {
   const images = [
-    "https://imgs.search.brave.com/zOBiwqqFzmBuvHMY-v59xRYGln3Z3OU5T_CheiRtXAQ/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zdDEu/Ym9sbHl3b29kbGlm/ZS5jb20vd3AtY29u/dGVudC91cGxvYWRz/L3Bob3Rvcy9uZWhh/LXNoYXJtYS1pbi1h/LXNleHktcG9zZS1m/b3ItYS1waG90b3No/b290LTIwMTYwNS03/MTM3MzguanBnP2lt/cG9saWN5PU1lZGl1/bV9XaWR0aG9ubHkm/dz0xMjgwJmg9OTAw",
-    "https://imgs.search.brave.com/IjFIGKbBOL3Y97awVtsz8dCWHE5ALKBQ444HaJEHAWU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zdDEu/Ym9sbHl3b29kbGlm/ZS5jb20vd3AtY29u/dGVudC91cGxvYWRz/L3Bob3Rvcy9uZWhh/LXNoYXJtYS1ob3ct/Y2FuLXlvdS1tYW5h/Z2UtdG8tbG9vay1z/by1ob3QtLTIwMTYx/Mi04Njc2NTUuanBn/P2ltcG9saWN5PU1l/ZGl1bV9XaWR0aG9u/bHkmdz0xMjgwJmg9/OTAw",
-    "https://imgs.search.brave.com/hURkr5BTlo_dYBSostHCwVGMTJXs07DPDO3iZzWw2Uw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1Qk16RTNNall4/WkRrdE9UaGtOaTAw/TkRjd0xUazFZak10/Wm1Vd01tWXhaVGRr/TldWaFhrRXlYa0Zx/Y0dkZVFYVnlNell4/T1RRM01EZ0AuanBn",
-    "https://imgs.search.brave.com/5IIpbDfBLM6ZbEni6xNxPrTFIEhKRaeoFy77CYWM22M/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1QlpUZ3lNekk0/TkRBdE1qYzBPUzAw/TlRKbUxXSTROREV0/TVRVd1kyUm1OREJo/TURBNFhrRXlYa0Zx/Y0dkZVFYVnlNell4/T1RRM01EZ0AuanBn",
-    "https://imgs.search.brave.com/9U-E7U5xEUkRGj_c9bJ8Wlgxc5ZHEtbFe8AeCuSP28Y/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1Qk5qTm1ZMk5t/T1RFdE5qRXdPQzAw/TURNMkxUZzJOVFF0/TmprNFpUWmtNVEV4/WkRVeFhrRXlYa0Zx/Y0dkZVFYVnlNell4/T1RRM01EZ0AuanBn",
+    "https://imgs.search.brave.com/LIMoz1Y1BxUhCzqbMNZYt7mJJ1J6lawZlD_Pkh_tuDs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMubmlnaHRjYWZl/LnN0dWRpby8vYXNz/ZXRzL3RkcmF3LWdp/cmwuanBnP3RyPXct/MTYwMCxjLWF0X21h/eA",
+    "https://img.artguru-cdn.com/image/aigc/9460de4d2a767c7c3523fd324336568c_512_512.webp",
+    "https://img.artguru-cdn.com/image/aigc/11e3d5c575ba81af168d8d6b8225edbe_512_512.webp",
+    "https://img.artguru-cdn.com/image/aigc/55f877404871fcfe4d58bf7b71ddf7e8_512_512.webp",
+    "https://img.artguru-cdn.com/image/aigc/0c9566ece3d755439af788fc040a4021_512_512.webp",
   ];
   const [mainImage, setMainImage] = useState(images[0]);
 
@@ -115,9 +116,11 @@ const SingleProduct = () => {
             </div>
           </div>
           <div data-aos="fade-up" className="flex gap-2 flex-col md:flex-row">
-            <Button className="min-w-[240px] rounded-none border-black py-8 px-8 ">
-              Add to Cart
-            </Button>
+            <Link to={"/cart"}>
+              <Button className="min-w-[240px] rounded-none border-black py-8 px-8 ">
+                Add to Cart
+              </Button>
+            </Link>
             <Button
               variant={"outline"}
               className="min-w-[240px] bg-white text-black rounded-none border-black py-8 px-8 "
@@ -168,10 +171,31 @@ const SingleProduct = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-[80%] m-auto">
+        <ProductCard
+          img1={
+            "https://images.pexels.com/photos/610293/pexels-photo-610293.jpeg?auto=compress&cs=tinysrgb&w=600"
+          }
+          img2={
+            "https://images.pexels.com/photos/21492/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600"
+          }
+        />
+        <ProductCard
+          img1={
+            "https://images.pexels.com/photos/610293/pexels-photo-610293.jpeg?auto=compress&cs=tinysrgb&w=600"
+          }
+          img2={
+            "https://images.pexels.com/photos/21492/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600"
+          }
+        />
+        <ProductCard
+          img1={
+            "https://images.pexels.com/photos/610293/pexels-photo-610293.jpeg?auto=compress&cs=tinysrgb&w=600"
+          }
+          img2={
+            "https://images.pexels.com/photos/21492/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600"
+          }
+        />
       </div>
       <div>
         <Testimonials />
